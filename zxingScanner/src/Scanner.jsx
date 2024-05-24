@@ -18,11 +18,10 @@ const QRCodeScanner = () => {
         const selectedDeviceId = videoInputDevices[0].deviceId;
 
         const constraints = {
-          video: {
-           // deviceId: selectedDeviceId,
-            facingMode: 'environment',
-          },
-        };
+            video: {
+              facingMode: { exact: "environment" }
+            }
+          };
 
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
         videoStream = stream;
